@@ -267,6 +267,9 @@ class AppPackageMakerAppImage extends AppPackageMaker {
         }),
       );
 
+      var outputMakeConfig = MakeConfig().copyWith(makeConfig)
+        ..packageFormat = 'AppImage';
+
       await $(
         'appimagetool',
         [
@@ -275,7 +278,7 @@ class AppPackageMakerAppImage extends AppPackageMaker {
             makeConfig.packagingDirectory.path,
             '${makeConfig.appName}.AppDir',
           ),
-          makeConfig.outputFile.path.replaceAll('.appimage', '.AppImage'),
+          outputMakeConfig.outputFile.path,
         ],
         environment: {
           'ARCH': _getArchitecture(),
@@ -287,7 +290,7 @@ class AppPackageMakerAppImage extends AppPackageMaker {
       });
 
       makeConfig.packagingDirectory.deleteSync(recursive: true);
-      return MakeResult(makeConfig);
+      return MakeResult(outputMakeConfig);
     } catch (e) {
       if (e is MakeError) rethrow;
       throw MakeError(e.toString());
