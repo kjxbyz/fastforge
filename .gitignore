@@ -3,7 +3,10 @@
 # IntelliJ related
 *.iml
 .idea/
+.vscode
 
 pubspec_overrides.yaml
 pubspec.lock
 .vercel
+
+.fvm/
