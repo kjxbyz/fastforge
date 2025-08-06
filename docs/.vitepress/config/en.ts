@@ -27,9 +27,13 @@ export const en = defineConfig({
 function nav(): DefaultTheme.NavItem[] {
   return [
     {
-      text: 'Guide',
+      text: 'Docs',
       link: '/getting-started',
       activeMatch: '/getting-started',
+    },
+    {
+      text: 'LeanFlutter',
+      link: 'https://leanflutter.dev',
     },
   ]
 }
@@ -51,10 +55,12 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       items: [
         { text: 'aab', link: 'makers/aab' },
         { text: 'apk', link: 'makers/apk' },
+        { text: 'app', link: 'makers/app' },
         { text: 'appimage', link: 'makers/appimage' },
         { text: 'deb', link: 'makers/deb' },
         { text: 'dmg', link: 'makers/dmg' },
         { text: 'exe', link: 'makers/exe' },
+        { text: 'hap', link: 'makers/hap' },
         { text: 'ipa', link: 'makers/ipa' },
         { text: 'msix', link: 'makers/msix' },
         { text: 'pkg', link: 'makers/pkg' },
@@ -66,7 +72,6 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
       text: 'Publishers',
       collapsed: false,
       items: [
-        { text: 'App Center', link: 'publishers/appcenter' },
         { text: 'App Store', link: 'publishers/appstore' },
         { text: 'fir.im', link: 'publishers/fir' },
         {
